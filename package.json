@@ -1,7 +1,7 @@
 {
   "name": "zxn",
-  "version": "0.0.4",
-  "description": "A Vue 2.x video player component based on AliPlayer",
+  "version": "0.0.5",
+  "description": "vue-aliplayer 修改this报错 自用",
   "main": "dist/vue-aliplayer.js",
   "files": [
     "dist"
