@@ -135,7 +135,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     aliplayerSdkPath: {
       // Aliplayer 代码的路径
       type: String,
-      default: "//g.alicdn.com/de/prismplayer/2.6.0/aliplayer-min.js"
+      default: "./aliplayer-min.js"
     },
     autoplay: {
       type: Boolean,
@@ -281,7 +281,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (_this.scriptTagStatus === 2 && (_this.instance === null || _this.reloadPlayer)) {
         _this.instance && _this.instance.dispose();
 
-        document.querySelector("#" + _this.playerId).innerHTML = "";
+        if (document.querySelector("#" + _this.playerId) != null) {
+          document.querySelector("#" + _this.playerId).innerHTML = "";
+        }
 
         // Vue 异步执行 DOM 更新，这样一来代码执行到这里的时候可能 template 里面的 script 标签还没真正创建
         // 所以，我们只能在 nextTick 里面初始化 Aliplayer
@@ -469,7 +471,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 exports = module.exports = __webpack_require__(3)(false);
 // imports
-exports.push([module.i, "@import url(//g.alicdn.com/de/prismplayer/2.5.0/skins/default/aliplayer-min.css);", ""]);
+exports.push([module.i, "@import url(./aliplayer-min.css);", ""]);
 
 // module
 exports.push([module.i, "\r\n", ""]);
